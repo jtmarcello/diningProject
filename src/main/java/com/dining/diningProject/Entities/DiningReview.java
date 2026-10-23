@@ -46,4 +46,13 @@ public class DiningReview {
 
     @Column(name = "commentary")
     private String commentary;
+
+    @Column(name = "status")
+    private Status status;
+
+    public enum Status {
+        PENDING,
+        ACCEPTED,
+        REJECTED
+    }
 }
