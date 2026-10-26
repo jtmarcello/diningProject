@@ -10,5 +10,5 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AdminReviewAction {
-    private boolean doesAdminAcceptReview;
+    private Boolean doesAdminAcceptReview;
 }
