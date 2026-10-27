@@ -9,11 +9,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
-
+import jakarta.persistence.JoinColumn;
 
 @Getter
 @Setter
@@ -25,6 +26,10 @@ public class DiningReview {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "restauraunt_id", nullable = false)
+    private Restaurant restaurant;
 
     @Column(name = "reviewer_name", unique = true)
     private String reviewerName;
