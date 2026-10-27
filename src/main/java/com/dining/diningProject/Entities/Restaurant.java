@@ -27,6 +27,9 @@ public class Restaurant {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "name", unique = true)
+    private String name;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "allergy_category")
     private AllergyCategory allergyCategory;
@@ -48,6 +51,9 @@ public class Restaurant {
     @Max(5)
     @Column(name = "dairy_score")
     private Integer dairyScore;
+
+    @Column(name = "zip_code")
+    private Integer zipCode;
 
     public enum AllergyCategory {
         PEANUT,
